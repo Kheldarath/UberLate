@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4288483925120562108}
   m_Layer: 0
   m_Name: Rocks 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 681416215416143156}
-  m_LocalRotation: {x: -0, y: -0, z: 0.9999819, w: -0.0060234717}
+  m_LocalRotation: {x: 0, y: -0, z: 0.9999819, w: -0.0060212873}
   m_LocalPosition: {x: 7.3599997, y: 35.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []

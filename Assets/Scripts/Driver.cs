@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Driver : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 0.01f;
-    float XMove = 0.0f;
-    [SerializeField] float turnSpeed = 0.5f;
+    [SerializeField] float moveSpeed = 20f;    
+    [SerializeField] float turnSpeed = 1f;
+    [SerializeField] float slowSpeed = 5f;
+    [SerializeField] float boostSpeed = 20f;
 
 
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -22,13 +19,26 @@ public class Driver : MonoBehaviour
     }
     void MoveCar(float turnAmount, float acceleration)
     {
-        transform.Rotate(XMove, acceleration, -turnAmount);
-        transform.Translate(XMove, acceleration, 0);
+        transform.Rotate(0, 0, -turnAmount);
+        transform.Translate(0, acceleration, 0);
     }
 
-    /*void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("FUCK YOU TOO BUDDY!");
+        if (other.gameObject.tag == "Obstacle")
+        {
+            moveSpeed = slowSpeed;
+            Debug.Log("Watch what you're doing!");
+        }
 
-    }*/
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Powerup")
+        {
+            moveSpeed = boostSpeed;
+            Debug.Log("We're speeding now!");
+        }
+    }
 } 
